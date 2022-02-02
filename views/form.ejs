@@ -13,13 +13,12 @@
             </ul>
         </nav>
         <p>Welcome to <%= title %></p>
-        <ul>
-            <% for (let message of messages) { %>
-            <li>
-                <%= message.user %> said <strong><%= message.text %></strong> at
-                <%= message.added %>
-            </li>
-            <% } %>
-        </ul>
+        <form action="/new" method="POST">
+            <label for="user">User's Name:</label>
+            <input type="text" name="user" id="user" />
+            <label for="text">Message Text:</label>
+            <input type="text" name="text" id="text" />
+            <button type="submit">Post Message</button>
+        </form>
     </body>
 </html>
